@@ -59,23 +59,53 @@ export default {
     </header>
 </template>
 
-<style>
+<style lang="scss" scoped>
+@use "../style/partials/variables" as *;
+
 header{
-    width: 80%;
-    height: 200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid;
-    align-items: center;
-}
+    line-height: 70px;
 
-ul{
-    display: flex;
-}
+    .logo{
+        img{
+            height: 70px;
+            vertical-align: middle;
+        }
+    }
 
-li{
-    list-style-type: none;
-    margin: .4rem;
+
+    ul{
+        list-style: none;
+        display: flex;
+
+        li{
+            margin: 0 1rem;
+
+            a{
+                position: relative;
+                display: inline-block;
+                text-decoration: none;
+                color: $text_color;
+                font-weight: 600;
+                line-height: inherit;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: inline-block;
+                    width: 100%;
+                    height: 0px;
+                    background-color: $main-color;
+                    transition: height .3s ease;
+                }
+
+                &:hover::after,
+                &.active::after{
+                    height: 5px;
+                }
+            }
+        }
+    }
 }
 </style>
