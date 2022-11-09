@@ -1,8 +1,8 @@
 <script>
-export default{
+export default {
     name: "AppIcons",
     data() {
-        return{
+        return {
             icons: [
                 {
                     img: 'buy-comics-digital-comics.png',
@@ -24,17 +24,16 @@ export default{
                     img: 'buy-dc-power-visa.svg',
                     title: "DC Power Visa"
                 }
-            ] 
+            ]
         }
     },
     methods: {
-        getImageUrl(url){
+        getImageUrl(url) {
             return new URL(url, import.meta.url).href;
         }
     }
 }
 </script>
-
 <template>
     <section class="primary-bg icons-section">
         <div class="small-container">
@@ -47,26 +46,21 @@ export default{
         </div>
     </section>
 </template>
-
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
-
-.primary-bg{
+.primary-bg {
     background-color: $main_color;
 }
-
-.icons-section{
+.icons-section {
     padding: 2rem 0;
-
-    ul{
+    ul {
         list-style: none;
-
-        img{
+        img {
             width: 50px;
             margin-right: .5rem;
         }
-
-        p{
+        p {
+            text-transform: uppercase;
             color: $dark_section_text_color;
         }
     }

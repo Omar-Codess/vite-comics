@@ -1,8 +1,7 @@
 <script>
-import AppHeader from "../src/components/AppHeader.vue";
-import ComicsList from "../src/components/ComicsList.vue";
-import AppIcons from "../src/components/AppIcons.vue";
-
+import AppHeader from './components/AppHeader.vue';
+import ComicsList from './components/ComicsList.vue';
+import AppIcons from './components/AppIcons.vue';
 export default {
   components: {
     AppHeader,
@@ -13,13 +12,15 @@ export default {
 </script>
 
 <template>
-<AppHeader />
+  <AppHeader />
 
-<ComicsList />
+  <main>
+    <ComicsList />
+    <AppIcons />
+  </main>
 
-<AppIcons />
 </template>
 
 <style lang="scss">
-@use "../src/styles/general.scss";
+@use "./styles/general.scss";
 </style>

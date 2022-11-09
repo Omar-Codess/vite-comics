@@ -35,22 +35,19 @@ export default {
 }
 </script>
 
-
 <template>
     <header>
         <div class="container flex-row justify-between">
             <div class="logo">
                 <a href="">
-                    <img src="../assets/img/dc-logo.png" alt="">
+                    <img src="../assets/img/dc-logo.png" alt="Comics DC">
                 </a>
             </div>
             <div class="menu">
                 <nav>
                     <ul>
                         <li v-for="(link, index) in menu" :key="index">
-                            <a :class="{ `active`: link.active }" :href="link.url">
-                                {{ link.title }}
-                            </a>
+                            <a :class="{ 'active': link.active }" :href="link.url">{{ link.title }}</a>
                         </li>
                     </ul>
                 </nav>
@@ -60,35 +57,29 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../style/partials/variables" as *;
-
-header{
+@use "../styles/partials/variables" as *;
+header {
     line-height: 70px;
-
-    .logo{
-        img{
+    .logo {
+        img {
             height: 70px;
             vertical-align: middle;
         }
     }
-
-
-    ul{
+    ul {
         list-style: none;
         display: flex;
-
-        li{
+        li {
             margin: 0 1rem;
-
-            a{
+            a {
                 position: relative;
                 display: inline-block;
+                text-transform: uppercase;
                 text-decoration: none;
                 color: $text_color;
                 font-weight: 600;
                 line-height: inherit;
-
-                &::after{
+                &::after {
                     content: "";
                     position: absolute;
                     bottom: 0;
@@ -99,9 +90,8 @@ header{
                     background-color: $main-color;
                     transition: height .3s ease;
                 }
-
                 &:hover::after,
-                &.active::after{
+                &.active::after {
                     height: 5px;
                 }
             }
