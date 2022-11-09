@@ -1,9 +1,14 @@
 <script>
+import AppHeader from "../src/components/AppHeader.vue"
+
 export default {
   data () {
     return {
 
     }
+  },
+  components: {
+    AppHeader
   },
   methods: {
 
@@ -12,7 +17,7 @@ export default {
 </script>
 
 <template>
-<h1>Dc Comics</h1>
+<AppHeader />
 </template>
 
 <style>
